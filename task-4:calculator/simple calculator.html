@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="simple calculator.css">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <div id="table">
+<table>
+        <tr><td colspan="3"><input type="text" id='input'  name="input" ></td>
+        <td><button onclick="clr()">C</button></td>
+<tr>
+<td><button onclick="dis(1)">1</button></td>
+<td><button onclick="dis(2)">2</button></td>
+<td><button onclick="dis(3)">3</button></td>
+<td><button onclick="dis('+')">+</button></td>
+</tr>
+<tr>
+<td><button onclick="dis(4)">4</button></td>
+<td><button onclick="dis(5)">5</button></td>
+<td><button onclick="dis(6)">6</button></td>
+<td><button onclick="dis('-')">-</button></td>
+</tr>
+<tr>
+<td><button onclick="dis(7)">7</button></td>
+<td><button onclick="dis(8)">8</button></td>
+<td><button onclick="dis(9)">9</button></td>
+<td><button onclick="dis('*')">x</button></td>
+</tr>
+<tr>
+    <td><button onclick="dis(0)">0</button></td>
+    <td><button onclick="dis('.')">.</button></td>
+    <td><button onclick="cal()">=</button></td>
+    <td><button onclick="dis('/')">/</button></td>
+</tr>
+
+
+  
+    
+
+</table> </div>
+</body>
+    <script> 
+    function clr(){
+document.getElementById('input').value="";
+    }
+    function dis(a){
+let x=(document.getElementById('input').value).toString();
+a=a.toString();
+x=x+a;
+document.getElementById('input').value=x;
+
+    }
+        function cal(){
+            let str=document.getElementById('input').value;
+            
+           let i=0;
+            let op1="";
+            let op2="";
+            let opr="";
+            while((i<str.length )&& (str[i]!='+'&&str[i]!='-'&& str[i]!='*'&&str[i]!='/')){
+                op1+=str[i];
+                i++;
+            }
+            opr+=str[i];
+       i++;
+            while((i<str.length) && (str[i]!='+'||str[i]!='-'||str[i]!='*'||str[i]!='/')){
+                op2+=str[i];
+                i++;
+            }
+            op1=parseInt(op1);
+            op2=parseInt(op2);
+            
+            
+            if(opr=="+"){
+                console.log("swanith");
+                let result=op1+op2;
+                console.log(result);
+                document.getElementById('input').value=result;
+            }
+            else if(opr=="-"){
+         
+                let result=op1-op2;
+               
+                document.getElementById('input').value=result;
+            }
+            else if(opr=="*"){
+                let result=op1*op2;
+                console.log(result);
+                document.getElementById('input').value=result;
+            }
+            else if(opr=="/"){
+                let result=op1/op2;
+                console.log(result);
+                document.getElementById('input').value=result;
+            }
+            
+
+        }
+    </script>
+</html>

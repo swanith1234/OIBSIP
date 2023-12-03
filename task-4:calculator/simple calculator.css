@@ -1,0 +1,35 @@
+body{
+ margin: 200px;
+ margin-left: 500px;
+padding: 0px;
+box-sizing: border-box;
+background-image: linear-gradient(orange,gray, white);
+}
+
+#table{
+    background-color: rgb(223, 191, 132);
+    width: 350px;
+    height: 400px;
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button{
+    height:60px;
+    width:60px;
+    border-radius: 50%;
+    border:2px solid orange ;
+}
+button:active{
+    background-color:orange;
+    color:white;
+}
+input{
+    height: 50px;
+   border-color: gray;
+    font-size: 1rem;
+   
+
+  
+}
